@@ -1,10 +1,19 @@
-import User from '../models/User.js'
-export const getUsers = (req, res, next) => {
+import User from '../models/User.js';
+
+export const getUsers = async (req, res) => {
     try {
-        const userbyId = User.find().lean();
-        res.json(userbyId);
-        next();
+        const users = await User.find().lean().then(() => res.json(users));
     } catch (err) {
-        res.json({ message: err });
+        res.json({ message: err.message });
+    }
+}
+
+export const createUser = async (req, res) => {
+    try {
+        const newUser = await new User(req.body);
+        newUser.save().then(newUser => res.json(newUser));
+        
+    } catch (err) {
+        res.json({message: err.message});
     }
 }

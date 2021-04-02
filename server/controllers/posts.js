@@ -1,12 +1,20 @@
-export const getAllPosts = (req, res, next) => {
+import Post from "../models/Post.js";
 
+export const getAllPosts = async (req, res) => {
     try {
-        //const posts = await Post.find({}).lean();
-        //res.json(posts)
-        res.send("This is getAllPosts Callback");
-        next();
+        const posts = await Post.find({}).lean().then();
+        res.json(posts);
     } catch (err) {
-        console.log("Error: " + err);
+        res.json({message: err.message});
+    }
+}
+
+export const createPost = async (req, res) => {
+    try{
+        const post = await new Post(req.body);
+        newPost.save().then(newPost => res.json(newPost))
+    } catch (err) {
+        res.json({message: err.message});
     }
 }
 

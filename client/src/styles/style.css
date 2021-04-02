@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&family=Roboto:wght@300;400;700&family=Yatra+One&display=swap");
+.nav-all {
+  background-color: #5eaaa8;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.nav-all.nav-title {
+  font-family: 'Roboto', sans-serif;
+  display: inline-block;
+  line-height: -4;
+  vertical-align: middle;
+}
+
+.nav-all .nav-logo {
+  width: 11vmax;
+  height: auto;
+}
+/*# sourceMappingURL=style.css.map */
