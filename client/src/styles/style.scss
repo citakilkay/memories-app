@@ -1,21 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&family=Roboto:wght@300;400;700&family=Yatra+One&display=swap');
+$xsmall : 576px;
+$small: 768px;
+$medium: 992px;
+$large: 992px;
+$grey1: #dfe6e9;
+$grey2: #b2bec3;
+$grey3 : #636e72;
+$grey4: #2d3436;
+$electron-blue: #81ecec;
+$robin-blue: #00cec9;
+$danger-gong: #d63031;
+
+
 body {
-   background: rgb(163, 210, 202);
    background: radial-gradient(circle, rgba(163, 210, 202, 0.89) 0%, rgba(163, 210, 202, 0.829) 22%, rgba(247, 243, 233, 0.87) 100%);
 }
 .nav-all {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 11px 9px rgba(0, 0, 0, 0.22);
-    background-color: #5eaaa8;
+    background-color: $robin-blue;
     border-radius: 7px;
     text-align: center;
     &.nav-title {
         font-family: 'Roboto', sans-serif;
         display: inline-block;
-        line-height: 1-5;
+        line-height: 1.5;
         vertical-align: middle;
     }
     .nav-logo {
-        width: 11vmax;
-        height: auto;
+        min-height: 10%;
+        max-height: 3.5rem;
+        width: auto;
     }
+    @media (max-width: $xsmall ) {
+        .nav-logo {
+            transform: translate(-20%, 0);
+        }
+    }
+} //nav-all END
+.card-all {
+    position: relative;
+    .scale-icon {
+        position: absolute;
+        top: 30%;
+        left: 49%;
+        opacity: 0;
+        transform: scale(5);
+        transition: opacity 0.4s ease-in-out;
+        z-index: 5;
+        
+    }
+    .card-image:hover .scale-icon {
+        opacity: 0.5;
+    }
+    // Card Hover Effect
+    /*.card-inside { 
+        transition: 1s;
+        position: relative;
+        &:hover {
+            top: -3rem;
+            padding-top: 6rem;
+        }
+    }*/
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    background-color: $grey1;
+    .card-image {
+        width: 100%;
+        height: 40vh;
+        object-fit: cover;
+    }
+
+    .card-icon {
+        .comment-icon {
+            color: $grey3;
+            cursor: pointer;
+            transition: color 0s;
+            transform: scale(1.4);
+
+            &:hover {
+                color: $grey4;
+                transform: scale(1.5);
+                transition-duration: 0s;
+            }
+            
+        }
+
+        .like-icon {
+            transform: translate(-35%, -41%);
+            width: 5.5rem;
+            height: 5.5rem;
+            background-position: 0 0;
+            background: url('../components/icons/heart.png') no-repeat;
+            cursor: pointer;
+            transition: background-position 1s steps(28);
+            transition-duration: 0s;
+
+            &:hover {
+                transition-duration: 1s;
+                background-position: -2800px 0;
+            }
+        } //like-icon END
+    }
+} // card-all END
+.click-like-icon {
+    transition-duration: 1s;
+    background-position: -2800px 0;
 }
+
