@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap'
-import '../styles/style.css'
 import boston1 from '../images/boston1.jpg'
 import british2 from '../images/british2.jpg'
 import heartIcon from '../components/icons/heart.png'
