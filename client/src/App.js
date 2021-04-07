@@ -1,19 +1,20 @@
 import React from 'react'
+import {useContext} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles/style.css'
 import Header from './components/Header'
 import Post from './components/Post'
 import AddPost from './components/AddPost'
-import PostProvider from './contexts/PostContext'
+import MemoryContextProvider from './contexts/MemoryContext'
 
 const App = () => {
     return (
         <>
-        <PostProvider>
+        <MemoryContextProvider>
             <Header />
             <Post />
             <AddPost />
-        </PostProvider>
+        </MemoryContextProvider>
         </>
     )
 }

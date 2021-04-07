@@ -28,7 +28,7 @@ const AddPost = () => {
                                 <Form.Control placeholder="#sunrise etc."></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
-                                <Form.Label className="label-file-upload" for="image-upload">Add Image</Form.Label><Form.File id="image-upload" className="d-none"/>
+                                <Form.Label className="label-file-upload" htmlFor="image-upload">Add Image</Form.Label><Form.File id="image-upload" className="d-none"/>
                             </Col>
                         </Row>
                     </Form.Group>

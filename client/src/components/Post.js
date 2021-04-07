@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap'
+import {MemoryContext} from '../contexts/MemoryContext'
 import boston1 from '../images/boston1.jpg'
 import british2 from '../images/british2.jpg'
-import heartIcon from '../components/icons/heart.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faComment, faHeart, faShare, faSearchPlus } from '@fortawesome/free-solid-svg-icons'
 import { faHeart as farHeart, faComment as farComment } from '@fortawesome/free-regular-svg-icons'
 const Post = () => {
+    const { posts } = useContext(MemoryContext);
+    console.log(posts);
+    const { users } = useContext(MemoryContext);
+    console.log(users);
+
     const heartClick = () => {
         this.classList.add("click-like-icon");
     }
