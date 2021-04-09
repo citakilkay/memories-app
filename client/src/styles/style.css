@@ -46,6 +46,14 @@ body {
   background-color: #dfe6e9;
 }
 
+.card-all .followers-count {
+  font-size: 0.8rem;
+}
+
+.card-all .creator-name {
+  font-size: 1.1rem;
+}
+
 .card-all .card-image {
   width: 100%;
   height: 40vh;

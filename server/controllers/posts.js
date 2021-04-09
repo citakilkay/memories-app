@@ -1,3 +1,4 @@
+import { response } from "express";
 import Post from "../models/Post.js";
 
 export const getAllPosts = async (req, res) => {
@@ -10,9 +11,13 @@ export const getAllPosts = async (req, res) => {
 }
 
 export const createPost = async (req, res) => {
+    const { title, body, postImg } = req.body;
+    const post = new Post({ title, body, postImg });
     try{
-        const post = await new Post(req.body);
-        newPost.save().then(newPost => res.json(newPost));
+        //Post.create(req.body);
+        await post.save();
+        console.log("post oluşturuldu");
+        res.redirect("/");
     } catch (err) {
         res.json({message: err.message});
     }
@@ -24,6 +29,6 @@ export const getPostbyId = (req, res) => {
         //const posts = Post.findbyId({}).lean();
         //res.json(posts);
     } catch (err) {
-        res.json({ message: err });
+        res.json({ message: err.message });
     }
 }

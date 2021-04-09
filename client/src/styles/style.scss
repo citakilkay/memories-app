@@ -39,6 +39,13 @@ body {
 } //nav-all END
 
 .card-all {
+    .followers-count{
+        font-size: 0.8rem;
+
+    }
+    .creator-name {
+        font-size: 1.1rem;
+    }
     .card-image {
         width: 100%;
         height: 40vh;
@@ -113,4 +120,3 @@ body {
     transition-duration: 1s;
     background-position: -2800px 0;
 }
-

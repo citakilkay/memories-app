@@ -2,7 +2,7 @@ import React,{ createContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const urlPosts = `http://localhost:5000/posts`;
-const urlUsers = `https://localhost:5000/users`;
+const urlUsers = `http://localhost:5000/users`;
 
 export const MemoryContext = createContext();
 
