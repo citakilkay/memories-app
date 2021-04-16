@@ -1,23 +1,17 @@
+//import busboy from "connect-busboy";
+//import multiparty from "multiparty";
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import 'dotenv/config.js';
 import postsRoutes from './routes/posts.js';
 import usersRoutes from './routes/users.js';
+import fileUpload from "express-fileupload";
+import connectMultiparty from "connect-multiparty";
 
 const app = express();
 const port = process.env.PORT || 5000;
-
-//bodyParser
-app.use(express.json({ limit: '30mb', extended: true }));
-app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
-
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
-app.use('/posts', postsRoutes);
-app.use('/users', usersRoutes);
+const multipartMiddleware = connectMultiparty();
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
@@ -31,4 +25,20 @@ mongoose.connect(process.env.DB_CONNECTION, {
 }).catch((err) => {
     console.log('Error Name: ' + err);
 });
+
+//app.use(busboy());
+//app.use(multipartMiddleware);
+app.use(fileUpload({createParentPath: true}));
+app.use(cors());
+
+//bodyParser
+app.use(express.json({ extended: true }));
+app.use(express.urlencoded({extended: true }));
+
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+app.use('/posts', postsRoutes);
+app.use('/users', usersRoutes);
 

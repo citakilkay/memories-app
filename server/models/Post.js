@@ -4,10 +4,10 @@ const PostSchema = new mongoose.Schema({
     title: {type: String, required: true},
     creator: { type: String},
     body: { type: String, required: true },
-    likes: { type: [String], default: []},
     tags: {type: [String], required: true},
-    comments: {type:[String], default: []},
     postImg: {type: String},
+    likes: { type: [String], default: [] },
+    comments: { type: [String], default: []},
     createdAt: {type: Date, default: new Date}
 }, { collection: 'posts' });
 

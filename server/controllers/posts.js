@@ -1,6 +1,8 @@
-import { response } from "express";
+import express from "express";
 import Post from "../models/Post.js";
+//import busboy from "connect-busboy";
 
+const app = express();
 export const getAllPosts = async (req, res) => {
     try {
         const posts = await Post.find({}).lean();
@@ -9,14 +11,14 @@ export const getAllPosts = async (req, res) => {
         res.json({message: err.message});
     }
 }
-
+//app.use(busboy());
 export const createPost = async (req, res) => {
-    const { title, body, postImg } = req.body;
-    const post = new Post({ title, body, postImg });
+    console.log(req.files);
+    const { title,creator, body,tags, postImg } = req.body;
+    const post = new Post({ title, creator, body, tags, postImg});
     try{
         //Post.create(req.body);
         await post.save();
-        console.log("post oluşturuldu");
         res.redirect("/");
     } catch (err) {
         res.json({message: err.message});
