@@ -1,14 +1,11 @@
 import express from 'express';
 import {getAllPosts, createPost} from '../controllers/posts.js';
-//import formidable from "formidable";
 import connectMultiparty from "connect-multiparty";
-//import multiparty from "multiparty";
-//import busboy from "connect-busboy";
 const router = new express.Router();
 const multipartMiddleware = connectMultiparty();
 
 router.get('/', getAllPosts);
-router.post('/addpost',/*busboy(),*/ createPost, multipartMiddleware);
+router.post('/addpost', createPost, multipartMiddleware);
 
 export default router;
 

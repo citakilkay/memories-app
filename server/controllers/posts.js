@@ -1,6 +1,5 @@
 import express from "express";
 import Post from "../models/Post.js";
-//import busboy from "connect-busboy";
 
 const app = express();
 export const getAllPosts = async (req, res) => {
@@ -11,13 +10,16 @@ export const getAllPosts = async (req, res) => {
         res.json({message: err.message});
     }
 }
-//app.use(busboy());
 export const createPost = async (req, res) => {
     console.log(req.files);
-    const { title,creator, body,tags, postImg } = req.body;
-    const post = new Post({ title, creator, body, tags, postImg});
     try{
+        const { title, body, tags } = req.body;
+        const creator  = "generalkenobi"
+        const {postImg}  = req.files;
+        const post = new Post({ title, creator, body, tags, postImg: `/uploads/post-images/${postImg.name}` });  
         //Post.create(req.body);
+        console.log(post);
+        postImg.mv("./uploads/post-images" + postImg.name);
         await post.save();
         res.redirect("/");
     } catch (err) {

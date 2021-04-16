@@ -1,5 +1,3 @@
-//import busboy from "connect-busboy";
-//import multiparty from "multiparty";
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -7,11 +5,9 @@ import 'dotenv/config.js';
 import postsRoutes from './routes/posts.js';
 import usersRoutes from './routes/users.js';
 import fileUpload from "express-fileupload";
-import connectMultiparty from "connect-multiparty";
 
 const app = express();
 const port = process.env.PORT || 5000;
-const multipartMiddleware = connectMultiparty();
 
 mongoose.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
