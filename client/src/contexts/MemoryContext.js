@@ -7,8 +7,8 @@ const urlUsers = `http://localhost:5000/users`;
 export const MemoryContext = createContext();
 
 const MemoryContextProvider = (props) => {
-    const [posts, setPosts] = useState();
-    const [users, setUsers] = useState();
+    const [posts, setPosts] = useState(["efeler"]);
+    const [users, setUsers] = useState([]);
     const[title, setTitle] = useState('Hello Title!');
     useEffect(async () => {
         const result = await axios(urlPosts);

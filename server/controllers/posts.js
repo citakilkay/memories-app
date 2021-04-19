@@ -12,14 +12,15 @@ export const getAllPosts = async (req, res) => {
 }
 export const createPost = async (req, res) => {
     console.log(req.files);
-    try{
-        const { title, body, tags } = req.body;
-        const creator  = "generalkenobi"
-        const {postImg}  = req.files;
-        const post = new Post({ title, creator, body, tags, postImg: `/uploads/post-images/${postImg.name}` });  
+    const { title, body, tags } = req.body;
+    const tagsArray = tags.split(" ");
+    const creator = "generalkenobi";
+    const { postImg } = req.files;
+    const post = new Post({ title, creator, body, tags: tagsArray, postImg: `/uploads/post-images/${postImg.name}` });
+    try{  
         //Post.create(req.body);
         console.log(post);
-        postImg.mv("./uploads/post-images" + postImg.name);
+        postImg.mv("./uploads/post-images/" + postImg.name);
         await post.save();
         res.redirect("/");
     } catch (err) {

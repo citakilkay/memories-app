@@ -44,7 +44,7 @@ const AddPost = () => {
                             <Col xs={12} md={6} className="my-2 offset-md-3">
                                 <FontAwesomeIcon icon={faEdit} className="text-dark mx-1"></FontAwesomeIcon>
                                 <Form.Label className="mx-1">Details of Memory</Form.Label>
-                                <Form.Control {...register('body')} required placeholder="Details" as="textarea"  rows={3}></Form.Control>
+                                <Form.Control {...register('body')} required placeholder="Details" as="textarea"  rows={5}></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
                                 <FontAwesomeIcon icon={faTag} className="text-dark mx-1"></FontAwesomeIcon>
