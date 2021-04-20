@@ -9,7 +9,7 @@ $grey3 : #636e72;
 $grey4: #2d3436;
 $electron-blue: #81ecec;
 $robin-blue: #00cec9;
-$danger-gong: #d63031;
+$danger-gong: #d63030;
 
 
 body {
@@ -41,10 +41,18 @@ body {
 .card-all {
     .read-more {
         &:hover {
-            
             font-weight: bold;
             cursor: pointer;
         }
+    }
+    .post-tag {
+        background-color: $grey2;
+        border-radius: 5px;
+        white-space: pre;
+        &:hover {
+            cursor: pointer;
+        }
+
     }
     .followers-count{
         font-size: 0.8rem;

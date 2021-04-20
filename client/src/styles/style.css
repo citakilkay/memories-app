@@ -51,6 +51,16 @@ body {
   cursor: pointer;
 }
 
+.card-all .post-tag {
+  background-color: #b2bec3;
+  border-radius: 5px;
+  white-space: pre;
+}
+
+.card-all .post-tag:hover {
+  cursor: pointer;
+}
+
 .card-all .followers-count {
   font-size: 0.8rem;
 }

@@ -7,7 +7,7 @@ import '../styles/add-post.css'
 import {useForm} from 'react-hook-form';
 
 const AddPost = () => {
-
+    //const [imgName,setImgName] = useState("");
     const { register, handleSubmit } = useForm();
     const onSubmit = async (dataForm, e) => {
         const formData = new FormData();
@@ -58,7 +58,7 @@ const AddPost = () => {
                         </Row>
                     </Form.Group>
                     <div className="text-center">
-                        <Button type="submit" className="bg-light text-dark border-light form-btn px-5 mb-5">Add Memory</Button>
+                        <Button type="submit" className="text-light border-light form-btn px-5 mb-5">Add the Memory</Button>
                     </div>
                 </Form>
         </Container>
@@ -68,6 +68,7 @@ const AddPost = () => {
 
 export default AddPost;
 
+//onChange={(e) => {setImgName(e.target.value)}}
 // value={postImg}
 // value={postTags}
 // value={postBody}
