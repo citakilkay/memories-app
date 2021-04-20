@@ -17,7 +17,7 @@ const MemoryContextProvider = (props) => {
     useEffect(async () => {
         const result = await axios(urlUsers);
         setUsers(result.data);
-    }, []);
+    }, [title]);
     return( 
         <MemoryContext.Provider value={{posts, users}}>
             {props.children}

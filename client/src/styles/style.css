@@ -46,6 +46,11 @@ body {
   background-color: #dfe6e9;
 }
 
+.card-all .read-more:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .card-all .followers-count {
   font-size: 0.8rem;
 }

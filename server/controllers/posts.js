@@ -20,7 +20,7 @@ export const createPost = async (req, res) => {
     try{  
         //Post.create(req.body);
         console.log(post);
-        postImg.mv("./uploads/post-images/" + postImg.name);
+        postImg.mv("../client/public/uploads/post-images/" + postImg.name);
         await post.save();
         res.redirect("/");
     } catch (err) {

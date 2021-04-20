@@ -7,6 +7,7 @@ import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import { faComment as farComment } from '@fortawesome/free-regular-svg-icons';
 const Post = (post) => {
     post = post.post;
+    const postBody = post.body.substring(0,300) + "...";
     console.log(post);
     /*const heartClick = () => {
         this.classList.add("click-like-icon");
@@ -14,11 +15,11 @@ const Post = (post) => {
     return (
             <Card className="card-all">
                 <div className="m-1"><span className="creator-name">{post.creator}</span><span className="text-muted ml-1 followers-count">5k followers</span></div>
-                <Card.Img variant="top" src={boston1} alt="image-description" className="card-image"/>
+            <Card.Img variant="top" src={`${post.postImg}`} alt="post_image" className="card-image"/>
                 <FontAwesomeIcon icon={faSearchPlus} className="scale-icon"/>
                 <Card.Body className="card-inside">
                     <Card.Title>{post.title}</Card.Title>
-                    <Card.Text>{post.body}</Card.Text>
+                    <Card.Text><span>{postBody}</span><br/><span class="read-more"onClick={()=> {console.log("")}}>Read More</span></Card.Text>
                     <Row className="text-center">
                         <Col xs= {1} className="card-icon mr-auto mb-auto">
                             <div className="like-icon"></div>

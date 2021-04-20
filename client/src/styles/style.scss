@@ -39,6 +39,13 @@ body {
 } //nav-all END
 
 .card-all {
+    .read-more {
+        &:hover {
+            
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
     .followers-count{
         font-size: 0.8rem;
 
