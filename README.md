@@ -30,7 +30,7 @@ This project is a social media app that share our memories.
  - [ ] Authentication and Authorization
  - [ ] Login and Register Page
  - [ ] Build Single Post Page
- - [ ] Create Routers
+ - [ ] Create Routes
  - [ ] User Account Page
  - [ ] Update Navbar
 
