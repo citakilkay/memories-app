@@ -13,10 +13,10 @@ This project is a social media app that share our memories.
  - git clone https://github.com/citakilkay/memories-app.git
  - cd memories-app
  - seperate terminals
- - cd client > to the first terminal
- - npm install > to the second terminal
- - npm start  > to the first terminal
- - nodemon index > to the second terminal
+ - cd client ==> to the first terminal
+ - npm install ==> to the second terminal
+ - npm start  ==> to the first terminal
+ - nodemon index ==> to the second terminal
  - Open http://localhost:3000 in your browser
 
 ## Toolbox
