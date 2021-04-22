@@ -28,11 +28,10 @@ export const createPost = async (req, res) => {
     }
 }
 
-export const getPostbyId = (req, res) => {
+export const getPostbyId = async (req, res) => {
     try {
-        res.send("getPostbyId function");
-        //const posts = Post.findbyId({}).lean();
-        //res.json(posts);
+        console.log(req.params.id);
+        Post.findById(req.params.id).lean().then(post => res.json(post));
     } catch (err) {
         res.json({ message: err.message });
     }

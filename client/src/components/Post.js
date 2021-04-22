@@ -7,14 +7,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
 import { faComment as farComment } from '@fortawesome/free-regular-svg-icons';
 const Post = (post) => {
+    const { setPostId } = useContext(MemoryContext);
     post = post.post;
     const nowDate = post.createdAt || new Date();
     const createdAt = moment(post.createdAt).startOf('hour').fromNow();
     let postBody = post.body || "Loading Post Body";
         postBody = postBody.substring(0, 300) + "...";
     let postTags = post.tags || ["Loading Post Tags"];
-    console.log(post);
-    //console.log(post);
     /*const heartClick = () => {
         this.classList.add("click-like-icon");
     }*/
@@ -25,7 +24,7 @@ const Post = (post) => {
                 <FontAwesomeIcon icon={faSearchPlus} className="scale-icon"/>
                 <Card.Body className="card-inside">
                     <Card.Title>{post.title}</Card.Title>
-                <Card.Text><span>{postBody}</span><br /><div className="text-center"><u className="read-more" onClick={() => { console.log("") }}>Read More</u></div></Card.Text>
+                <Card.Text><span>{postBody}</span><br /><div className="text-center"><u className="read-more" onClick={() => { setPostId(post._id) }}>Read More</u></div></Card.Text>
                     <Row className="text-center">
                         <Col xs= {1} className="card-icon mr-auto mb-auto">
                             <div className="like-icon"></div>

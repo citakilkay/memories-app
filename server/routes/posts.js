@@ -1,12 +1,12 @@
 import express from 'express';
-import {getAllPosts, createPost} from '../controllers/posts.js';
+import {getAllPosts, createPost, getPostbyId} from '../controllers/posts.js';
 import connectMultiparty from "connect-multiparty";
 const router = new express.Router();
 const multipartMiddleware = connectMultiparty();
 
 router.get('/', getAllPosts);
 router.post('/addpost', createPost, multipartMiddleware);
-
+router.get('/:id', getPostbyId);
 export default router;
 
 /*
