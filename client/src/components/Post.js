@@ -1,18 +1,28 @@
 import React, {useContext, useEffect} from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import {MemoryContext} from '../contexts/MemoryContext';
+import axios from 'axios'
 import moment from 'moment'
 const Post = (post) => {
-    const { setPostId } = useContext(MemoryContext);
+    const { setPostId, postById } = useContext(MemoryContext);
+    const history = useHistory();
     post = post.post;
     const nowDate = post.createdAt || new Date();
     const createdAt = moment(post.createdAt).startOf('hour').fromNow();
     let postBody = post.body || "Loading Post Body";
-        postBody = postBody.substring(0, 300) + "...";
+        postBody = postBody.substring(0,300) + "...";
     let postTags = post.tags || ["Loading Post Tags"];
     /*const heartClick = () => {
         this.classList.add("click-like-icon");
     }*/
+    useEffect(async () => {
+        if (postById == undefined) {
+            return null;
+        }
+        console.log(postById);
+        history.push('/posts/:id');
+    }, [postById]);
     return (
             <Card className="card-all">
                 <div className="m-1"><span className="creator-name">{post.creator}</span><span className="text-muted ml-1 followers-count">5k followers</span></div>

@@ -1,4 +1,5 @@
 import React,{ createContext, useState, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 const urlPosts = `http://localhost:5000/posts`;
@@ -12,6 +13,7 @@ const MemoryContextProvider = (props) => {
     const[title, setTitle] = useState('Hello Title!');
     const[postId, setPostId] = useState();
     const[postById, setPostById] = useState();
+    const history = useHistory();
     useEffect(async () => {
         const result = await axios(urlPosts);
         setPosts(result.data);
@@ -21,17 +23,16 @@ const MemoryContextProvider = (props) => {
         setUsers(result.data);
     }, [title]);
     useEffect(async () => {
-        if(postId == undefined) {
+        if (postId == undefined) {
             return null;
         }
         const urlPostbyId = `http://localhost:5000/posts/${postId}`;
         const result = await axios(urlPostbyId);
         console.log(result.data);
         setPostById(result.data);
-
-    },[postId])
+    }, [postId]);
     return( 
-        <MemoryContext.Provider value={{posts, users, postId, setPostId}}>
+        <MemoryContext.Provider value={{posts, users, setPostId, postById}}>
             {props.children}
         </MemoryContext.Provider>
     )

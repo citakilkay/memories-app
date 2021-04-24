@@ -33,7 +33,7 @@ This project is a social media app that share our memories.
  - [ ] User Account Page
  - [ ] Update Navbar
  - [ ] Build Single Post Page
- - [X] Create Routes
+ - [X] Create React Routes
  - [X] Create Add Post Form
  - [X] Save Post to Database 
  - [X] Create Post Cards

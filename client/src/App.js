@@ -1,20 +1,23 @@
 import React from 'react';
+import { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.css';
 import Header from './components/Header';
 import AddPost from './components/AddPost';
-import MemoryContextProvider from './contexts/MemoryContext';
+import MemoryContextProvider, { MemoryContext } from './contexts/MemoryContext';
 import PostsList from './components/PostsList';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SinglePost from './components/SinglePost';
 
 const App = () => {
+    //const { postId } = useContext(MemoryContext);
     return (
         <>
         <MemoryContextProvider>
             <Router>
                 <Switch>
-                    <Route path="/posts/:İd">
+                    <Route path="/posts/:id">
+                        <Header />
                         <SinglePost />
                     </Route>
                     <Route path="/posts">
