@@ -1,10 +1,19 @@
 import React, {useContext, useEffect} from 'react'
 import { MemoryContext } from '../contexts/MemoryContext';
+import { useHistory } from 'react-router-dom';
 import Post from './Post';
 import {Container, Row, Col } from 'react-bootstrap';
 
 const PostsList = () => {
-    const { posts } = useContext(MemoryContext);
+    const { posts, postById } = useContext(MemoryContext);
+    const history = useHistory();
+    useEffect(async () => {
+        if (postById == undefined) {
+            return null;
+        }
+        console.log(postById);
+        history.push(`/posts/:id`);
+    }, [postById]);
         return (
             <Container>
                 <Row>

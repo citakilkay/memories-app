@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/style.css';
+import './styles/add-post.css'
 import Header from './components/Header';
 import AddPost from './components/AddPost';
 import MemoryContextProvider, { MemoryContext } from './contexts/MemoryContext';

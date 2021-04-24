@@ -32,10 +32,10 @@ This project is a social media app that share our memories.
  - [ ] Login and Register Page
  - [ ] User Account Page
  - [ ] Update Navbar
- - [ ] Build Single Post Page
+ - [X] Build Single Post Page
  - [X] Create React Routes
  - [X] Create Add Post Form
- - [X] Save Post to Database 
+ - [X] Save Post to Database
  - [X] Create Post Cards
 
 LICENSE:MIT

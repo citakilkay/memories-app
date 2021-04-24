@@ -1,7 +1,6 @@
 import React, {useEffect, useState}  from 'react';
 import { Card, Container, Row, Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios';
-import '../styles/add-post.css'
 import {useForm} from 'react-hook-form';
 
 const AddPost = () => {
@@ -40,12 +39,12 @@ const AddPost = () => {
                                 <Form.Control {...register('title')} required placeholder="Type Title"></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
-                                <i class="far fa-edit text-dark mx-1"></i>
+                                <i className="far fa-edit text-dark mx-1"></i>
                                 <Form.Label className="mx-1">Details of Memory</Form.Label>
                                 <Form.Control {...register('body')} required placeholder="Details" as="textarea"  rows={5}></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
-                                <i class="fas fa-tag text-dark mx-1"></i>
+                                <i className="fas fa-tag text-dark mx-1"></i>
                                 <Form.Label className="mx-1">Tags</Form.Label>
                                 <Form.Control {...register('tags')} placeholder="#sunrise etc." required></Form.Control>
                             </Col>
