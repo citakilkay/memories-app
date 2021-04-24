@@ -1,11 +1,7 @@
 import React, {useContext, useEffect} from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import {MemoryContext} from '../contexts/MemoryContext';
-import boston1 from '../images/boston1.jpg';
 import moment from 'moment'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearchPlus } from '@fortawesome/free-solid-svg-icons';
-import { faComment as farComment } from '@fortawesome/free-regular-svg-icons';
 const Post = (post) => {
     const { setPostId } = useContext(MemoryContext);
     post = post.post;
@@ -21,7 +17,7 @@ const Post = (post) => {
             <Card className="card-all">
                 <div className="m-1"><span className="creator-name">{post.creator}</span><span className="text-muted ml-1 followers-count">5k followers</span></div>
             <Card.Img variant="top" src={`${post.postImg}`} alt="post_image" className="card-image"/>
-                <FontAwesomeIcon icon={faSearchPlus} className="scale-icon"/>
+                <i class="fas fa-search-plus scale-icon"></i>
                 <Card.Body className="card-inside">
                     <Card.Title>{post.title}</Card.Title>
                 <Card.Text><span>{postBody}</span><br /><div className="text-center"><u className="read-more" onClick={() => { setPostId(post._id) }}>Read More</u></div></Card.Text>
@@ -30,7 +26,7 @@ const Post = (post) => {
                             <div className="like-icon"></div>
                         </Col>
                         <Col xs={1} className="card-icon mr-auto mb-auto">
-                            <FontAwesomeIcon icon={farComment} className="comment-icon"/>
+                        <i class="far fa-comment comment-icon"></i>
                         </Col>
                         <Col xs={6} className="card-icon ml-auto mb-auto">
                         <p className="text-dark">{createdAt}</p>

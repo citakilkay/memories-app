@@ -1,8 +1,6 @@
 import React, {useEffect, useState}  from 'react';
 import { Card, Container, Row, Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit, faTag} from '@fortawesome/free-solid-svg-icons'
 import '../styles/add-post.css'
 import {useForm} from 'react-hook-form';
 
@@ -42,12 +40,12 @@ const AddPost = () => {
                                 <Form.Control {...register('title')} required placeholder="Type Title"></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
-                                <FontAwesomeIcon icon={faEdit} className="text-dark mx-1"></FontAwesomeIcon>
+                                <i class="far fa-edit text-dark mx-1"></i>
                                 <Form.Label className="mx-1">Details of Memory</Form.Label>
                                 <Form.Control {...register('body')} required placeholder="Details" as="textarea"  rows={5}></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
-                                <FontAwesomeIcon icon={faTag} className="text-dark mx-1"></FontAwesomeIcon>
+                                <i class="fas fa-tag text-dark mx-1"></i>
                                 <Form.Label className="mx-1">Tags</Form.Label>
                                 <Form.Control {...register('tags')} placeholder="#sunrise etc." required></Form.Control>
                             </Col>
