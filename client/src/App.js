@@ -29,6 +29,7 @@ const App = () => {
                     <Route path="/">
                         <Header />
                         <PostsList />
+                        <AddPost />
                     </Route>
                 </Switch>
             </Router>

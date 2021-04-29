@@ -19,9 +19,9 @@ export const createPost = async (req, res) => {
     const post = new Post({ title, creator, body, tags: tagsArray, postImg: `/uploads/post-images/${postImg.name}` });
     try{  
         //Post.create(req.body);
-        console.log(post);
-        postImg.mv("../client/public/uploads/post-images/" + postImg.name);
+        postImg.mv("../uploads/post-images/" + postImg.name);
         await post.save();
+        console.log(post);
         res.redirect("/posts");
     } catch (err) {
         res.json({message: err.message});
