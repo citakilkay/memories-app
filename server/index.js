@@ -24,7 +24,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 
 //app.use(busboy());
 //app.use(multipartMiddleware);
-app.use(fileUpload({createParentPath: true}));
+app.use(fileUpload({ createParentPath: true, useTempFiles: true, tempFileDir: '/tmp/'}));
 app.use(cors());
 
 //bodyParser

@@ -26,6 +26,7 @@ This project is a social media app that share our memories.
  - SCSS
  - React Router
  - React-Boostrap
+ - AWS S3
 
 ## ToDoList
  - [ ] Authentication and Authorization

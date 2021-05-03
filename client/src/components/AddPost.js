@@ -19,7 +19,7 @@ const AddPost = () => {
                 }
             };
             const res = await axios({
-                method: 'POST', url: 'https://share-memory-app.herokuapp.com/posts/addpost', data: formData, config});
+                method: 'POST', url: 'http://localhost:5000/posts/addpost', data: formData, config});
             console.log(res);
             e.target.reset();
         } catch (err) {

@@ -39,3 +39,5 @@ const App = () => {
 }
 
 export default App
+
+//"proxy": "https://share-memory-app.herokuapp.com",

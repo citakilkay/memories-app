@@ -2,8 +2,8 @@ import React,{ createContext, useState, useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-const urlPosts = `https://share-memory-app.herokuapp.com/posts`;
-const urlUsers = `https://share-memory-app.herokuapp.com/users`;
+const urlPosts = `http://localhost:5000/posts`;
+const urlUsers = `http://localhost:5000/users`;
 
 export const MemoryContext = createContext();
 
@@ -17,7 +17,7 @@ const MemoryContextProvider = (props) => {
     useEffect(async () => {
         const result = await axios(urlPosts);
         setPosts(result.data);
-    }, []);
+    }, [title]);
     useEffect(async () => {
         const result = await axios(urlUsers);
         setUsers(result.data);
@@ -26,7 +26,7 @@ const MemoryContextProvider = (props) => {
         if (postId == undefined) {
             return null;
         }
-        const urlPostbyId = `https://share-memory-app.herokuapp.com/posts/${postId}`;
+        const urlPostbyId = `http://localhost:5000/posts/${postId}`;
         const result = await axios(urlPostbyId);
         console.log(result.data);
         setPostById(result.data);

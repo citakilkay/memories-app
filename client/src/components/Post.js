@@ -4,8 +4,10 @@ import { MemoryContext } from '../contexts/MemoryContext';
 import axios from 'axios';
 import moment from 'moment';
 const Post = (post) => {
-    const { setPostId, postById } = useContext(MemoryContext);
+    const { setPostId } = useContext(MemoryContext);
     post = post.post;
+    const postImgKey = post.postImg || "dinazor.jpg";
+    console.log(post.postImg)
     const createdAt = moment(post.createdAt).startOf('hour').fromNow();
     let postBody = post.body || "Loading Post Body";
         postBody = postBody.substring(0,300) + "...";
@@ -16,7 +18,7 @@ const Post = (post) => {
     return (
             <Card className="card-all">
                 <div className="m-1"><span className="creator-name">{post.creator}</span><span className="text-muted ml-1 followers-count">5k followers</span></div>
-            <Card.Img variant="top" src={`${post.postImg}`} alt="post_image" className="card-image"/>
+            <Card.Img variant="top" src={`http://localhost:5000/posts/images/${postImgKey}`} alt="post_image" className="card-image"/>
                 <i className="fas fa-search-plus scale-icon"></i>
                 <Card.Body className="card-inside">
                     <Card.Title>{post.title}</Card.Title>
@@ -41,3 +43,5 @@ const Post = (post) => {
 }
 
 export default Post;
+
+// src={`${post.postImg}`}

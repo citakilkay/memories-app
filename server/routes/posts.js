@@ -1,5 +1,5 @@
 import express from 'express';
-import {getAllPosts, createPost, getPostbyId} from '../controllers/posts.js';
+import {getAllPosts, createPost, getPostbyId, getImageByKey} from '../controllers/posts.js';
 import connectMultiparty from "connect-multiparty";
 const router = new express.Router();
 const multipartMiddleware = connectMultiparty();
@@ -7,6 +7,7 @@ const multipartMiddleware = connectMultiparty();
 router.get('/', getAllPosts);
 router.post('/addpost', createPost, multipartMiddleware);
 router.get('/:id', getPostbyId);
+router.get('/images/:key', getImageByKey);
 export default router;
 
 /*
