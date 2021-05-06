@@ -36,7 +36,6 @@ export const uploadFile = (file) => {
             console.log("PRINT FILE:", file);
         })});
     })
-    //const fileStream = fs.createReadStream(file.name);
     console.log("test2");
 }
 

@@ -20,8 +20,8 @@ const AddPost = () => {
             };
             const res = await axios({
                 method: 'POST', url: 'http://localhost:5000/posts/addpost', data: formData, config});
-            console.log(res);
-            e.target.reset();
+                console.log(res);
+                e.target.reset();
         } catch (err) {
             console.log(err);
         }
@@ -49,7 +49,6 @@ const AddPost = () => {
                                 <Form.Control {...register('tags')} placeholder="#sunrise etc." required></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
-                                <Form.Label className="label-file-upload" htmlFor="image-upload">Add Image</Form.Label>
                                 <Form.File {...register('postImg')} id="image-upload" required type="file"/>
                             </Col>
                         </Row>
