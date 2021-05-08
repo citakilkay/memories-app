@@ -5,15 +5,23 @@ import Post from './Post';
 import {Container, Row, Col } from 'react-bootstrap';
 
 const PostsList = () => {
-    const { posts, postById } = useContext(MemoryContext);
+    const { posts, postById, postId, userProfile } = useContext(MemoryContext);
     const history = useHistory();
     useEffect(async () => {
         if (postById == undefined) {
             return null;
         }
         console.log(postById);
-        history.push(`/posts/:id`);
+        history.push(`/posts/${postId}`);
     }, [postById]);
+    useEffect(async () => {
+        if(userProfile == undefined ) {
+            console.log("Nullmuş ya la");
+            return null;
+        }
+        console.log("Null değilmiş ya la");
+        history.push(`/users/${userProfile.username}`);
+    },[userProfile]);
         return (
             <Container>
                 <Row>

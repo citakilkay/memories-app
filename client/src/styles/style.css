@@ -134,6 +134,7 @@ body {
 
 .card-all .creator-name {
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .card-all .card-image {
@@ -209,5 +210,19 @@ body {
   -webkit-transition-duration: 1s;
           transition-duration: 1s;
   background-position: -2800px 0;
+}
+
+.profile-section {
+  border-bottom: 3px solid #2d3436;
+}
+
+.profile-section .follow-info {
+  background-color: #dfe6e9;
+  border-radius: 5px;
+  white-space: pre;
+}
+
+.profile-section .follow-info:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

@@ -18,3 +18,14 @@ export const createUser = async (req, res) => {
         res.json({message: err.message});
     }
 }
+
+export const getUserByName = async (req, res) => {
+    try {
+        console.log(req.params.username);
+        const postbyId = await User.findOne({"username" : req.params.username}).lean();
+        console.log(postbyId);
+        res.json(postbyId);
+    } catch (err) {
+        res.json({ message: err });
+    }
+}

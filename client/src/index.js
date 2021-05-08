@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import MemoryContextProvider from './contexts/MemoryContext';
 
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <MemoryContextProvider>
+            <App />
+        </MemoryContextProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );

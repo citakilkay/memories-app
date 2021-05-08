@@ -20,7 +20,7 @@ const Header = () => {
                                     <h5 className="nav-sub px-3 mr-1"><i className="fas fa-sign-out-alt mr-1"></i>Log-Out</h5>
                                 </Nav.Item>
                                 <Nav.Item className="nav-text-pos" eventKey="3">
-                                    <h5 className=" px-3 nav-dark-mode"><input type="checkbox" className="dark-mode" />Dark Mode</h5>
+                                    <h5 className="px-3 nav-dark-mode"><input type="checkbox" className="dark-mode" />Dark Mode</h5>
                                 </Nav.Item>
                             </Nav>
                         </Navbar.Collapse>

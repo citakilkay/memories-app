@@ -121,6 +121,7 @@ body {
     }
     .creator-name {
         font-size: 1.1rem;
+        cursor: pointer;
     }
     .card-image {
         width: 100%;
@@ -193,4 +194,15 @@ body {
 .click-like-icon {
     transition-duration: 1s;
     background-position: -2800px 0;
+}
+.profile-section {
+    border-bottom: 3px solid $grey4;
+    .follow-info {
+        background-color: $grey1;
+        border-radius: 5px;
+        white-space: pre;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }

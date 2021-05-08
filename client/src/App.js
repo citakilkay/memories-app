@@ -5,19 +5,26 @@ import './styles/style.css';
 import './styles/add-post.css'
 import Header from './components/Header';
 import AddPost from './components/AddPost';
+import Profile from './components/Profile';
 import MemoryContextProvider, { MemoryContext } from './contexts/MemoryContext';
 import PostsList from './components/PostsList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SinglePost from './components/SinglePost';
 
 const App = () => {
-    //const { postId } = useContext(MemoryContext);
+    const { postId } = useContext(MemoryContext);
+    const { userName } = useContext(MemoryContext);
     return (
         <>
-        <MemoryContextProvider>
             <Router>
                 <Switch>
-                    <Route path="/posts/:id">
+                    <Route path={`/users/${userName}`}>
+                        <div>Profile</div>
+                        <Header />
+                        <Profile/>
+                        <PostsList/>
+                    </Route>
+                    <Route path={`/posts/${postId}`}>
                         <Header />
                         <SinglePost />
                     </Route>
@@ -33,7 +40,6 @@ const App = () => {
                     </Route>
                 </Switch>
             </Router>
-        </MemoryContextProvider>
         </>
     )
 }

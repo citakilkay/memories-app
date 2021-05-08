@@ -4,7 +4,7 @@ import { MemoryContext } from '../contexts/MemoryContext';
 import axios from 'axios';
 import moment from 'moment';
 const Post = (post) => {
-    const { setPostId } = useContext(MemoryContext);
+    const { setPostId, setUserName } = useContext(MemoryContext);
     post = post.post;
     const postImgKey = post.postImg || "dinazor.jpg";
     console.log(post.postImg)
@@ -17,7 +17,7 @@ const Post = (post) => {
     }*/
     return (
             <Card className="card-all">
-                <div className="m-1"><span className="creator-name">{post.creator}</span><span className="text-muted ml-1 followers-count">5k followers</span></div>
+                <div className="m-1"><span className="creator-name" onClick={() => {setUserName(post.creator)}}>{post.creator}</span><span className="text-muted ml-1 followers-count">5k followers</span></div>
             <Card.Img variant="top" src={`http://localhost:5000/posts/images/${postImgKey}`} alt="post_image" className="card-image"/>
                 <i className="fas fa-search-plus scale-icon"></i>
                 <Card.Body className="card-inside">
