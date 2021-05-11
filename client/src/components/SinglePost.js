@@ -19,7 +19,7 @@ const SinglePost = () => {
                                     <h3 className="text-center">{postById.title}</h3>
                                 </Col>
                                 <Col xs={12} className="my-3">
-                                    <p>{postById.body}</p>
+                                    <div>{postById.body}</div>
                                 </Col>
                                 <Col xs={12} className="my-3 text-center">
                                     <Row>

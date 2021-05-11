@@ -15,10 +15,7 @@ const s3 = new S3( {
 })
 
 export const uploadFile = (file) => {
-    //console.log("test1");
-    //console.log("File Path is here:", file.tempFilePath);
     fs.readFile(file.tempFilePath, (err, data) => {
-        //console.log("Datamız burada: ", data);
         if (err) console.log("File Read Error: ", err);
         const uploadParams = {
             Bucket: bucketName,
@@ -26,7 +23,6 @@ export const uploadFile = (file) => {
             Body: data
         }
         s3.createBucket( () => {s3.upload(uploadParams, (err, data) => {
-            //console.log("Bucket Datası: ", data);
             fs.unlink(file.path, (err) => {
                 if (err) {
                     console.error("File Unlink Error: ",err);
@@ -40,11 +36,11 @@ export const uploadFile = (file) => {
 }
 
 export const downloadFile = (fileKey) => {
-    //console.log("This is filekey:", fileKey)
+
     const downloadParams = {
         Key: fileKey,
         Bucket: bucketName
     }
-    //console.log("This is params:", downloadParams)
+
     return s3.getObject(downloadParams).createReadStream()
 }

@@ -47,12 +47,13 @@ body {
                 top: -0.4rem;
         }
         .dark-mode {
-            height: 1.6rem;
-            width: 2.9rem;
+            height: 1.3rem;
+            width: 2.3rem;
             border-radius: 0.9rem;
             display: inline-block;
             position: relative;
             top: 0.3rem;
+            left: -0.7rem;
             margin: 0; 
             border: 2px solid #474755; 
             background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
@@ -60,10 +61,10 @@ body {
             &:after{
                 content: '';
                 position: absolute; 
-                top: 0.1rem;
+                
                 left: 0.1rem;
-                width: 1.2rem;
-                height: 1.2rem;
+                width: 1rem;
+                height: 1rem;
                 border-radius: 50%;
                 background: white; 
                 box-shadow: 0 1px 2px rgba(44, 44, 44, .2);
@@ -72,7 +73,7 @@ body {
             &:checked {
                 border-color: #654FEC;
                  &:after{
-                    transform: translatex(20px);
+                    transform: translatex(0.8rem);
                  } 
             }
                 

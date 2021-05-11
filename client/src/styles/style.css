@@ -41,12 +41,13 @@ body {
 }
 
 .nav-all .nav-text-pos .dark-mode {
-  height: 1.6rem;
-  width: 2.9rem;
+  height: 1.3rem;
+  width: 2.3rem;
   border-radius: 0.9rem;
   display: inline-block;
   position: relative;
   top: 0.3rem;
+  left: -0.7rem;
   margin: 0;
   border: 2px solid #474755;
   background: -webkit-gradient(linear, left top, left bottom, from(#2D2F39), to(#1F2027));
@@ -58,10 +59,9 @@ body {
 .nav-all .nav-text-pos .dark-mode:after {
   content: '';
   position: absolute;
-  top: 0.1rem;
   left: 0.1rem;
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
   background: white;
   -webkit-box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
@@ -75,8 +75,8 @@ body {
 }
 
 .nav-all .nav-text-pos .dark-mode:checked:after {
-  -webkit-transform: translatex(20px);
-          transform: translatex(20px);
+  -webkit-transform: translatex(0.8rem);
+          transform: translatex(0.8rem);
 }
 
 @media (min-width: 992px) {

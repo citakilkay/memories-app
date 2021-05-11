@@ -22,7 +22,7 @@ const Post = (post) => {
                 <i className="fas fa-search-plus scale-icon"></i>
                 <Card.Body className="card-inside">
                     <Card.Title>{post.title}</Card.Title>
-                <Card.Text><span>{postBody}</span><br /><div className="text-center"><u className="read-more" onClick={() => { setPostId(post._id) }}>Read More</u></div></Card.Text>
+                <Card.Text><span>{postBody}</span><br /><u className="read-more" onClick={() => { setPostId(post._id) }}>Read More</u></Card.Text>
                     <Row className="text-center">
                         <Col xs= {1} className="card-icon mr-auto mb-auto">
                             <div className="like-icon"></div>

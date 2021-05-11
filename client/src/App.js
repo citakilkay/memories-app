@@ -10,23 +10,23 @@ import MemoryContextProvider, { MemoryContext } from './contexts/MemoryContext';
 import PostsList from './components/PostsList';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SinglePost from './components/SinglePost';
+import UserPosts from './components/UserPosts';
 
 const App = () => {
-    const { postId } = useContext(MemoryContext);
-    const { userName } = useContext(MemoryContext);
+    const { postId, userName } = useContext(MemoryContext);
+    
     return (
         <>
             <Router>
                 <Switch>
                     <Route path={`/users/${userName}`}>
-                        <div>Profile</div>
                         <Header />
                         <Profile/>
-                        <PostsList/>
+                        <UserPosts/>
                     </Route>
                     <Route path={`/posts/${postId}`}>
                         <Header />
-                        <SinglePost />
+                        <SinglePost/>
                     </Route>
                     <Route path="/posts">
                         <Header />

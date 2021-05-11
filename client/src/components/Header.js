@@ -1,7 +1,8 @@
 import React from 'react'
-import { Card, Container, Row, Col, Navbar, Nav } from 'react-bootstrap'
+import { Card, Container, Row, Col, Navbar, Nav, Form } from 'react-bootstrap'
 import LogoTransperant from '../images/logo1.png'
 const Header = () => {
+    
     return (
         <>
             <Container>
@@ -14,13 +15,13 @@ const Header = () => {
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="ml-auto mr-md-4">
                                 <Nav.Item className="nav-text-pos" eventKey="1">
-                                    <h5 className="nav-sub px-3"><i className="fas fa-user mr-1"></i>My Profile</h5>
+                                    <h6 className="nav-sub px-3"><i className="fas fa-user mr-1"></i>My Profile</h6>
                                 </Nav.Item>
                                 <Nav.Item className="nav-text-pos" eventKey="2">
-                                    <h5 className="nav-sub px-3 mr-1"><i className="fas fa-sign-out-alt mr-1"></i>Log-Out</h5>
+                                    <h6 className="nav-sub px-3 mr-1"><i className="fas fa-sign-out-alt mr-1"></i>Log-Out</h6>
                                 </Nav.Item>
                                 <Nav.Item className="nav-text-pos" eventKey="3">
-                                    <h5 className="px-3 nav-dark-mode"><input type="checkbox" className="dark-mode" />Dark Mode</h5>
+                                    <h6 className="px-3 nav-dark-mode"><input type="checkbox" className="dark-mode" />Dark Mode</h6>
                                 </Nav.Item>
                             </Nav>
                         </Navbar.Collapse>
