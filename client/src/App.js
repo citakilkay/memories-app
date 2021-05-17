@@ -14,19 +14,19 @@ import UserPosts from './components/UserPosts';
 
 const App = () => {
     const { postId, userName } = useContext(MemoryContext);
-    
+
     return (
         <>
             <Router>
                 <Switch>
                     <Route path={`/users/${userName}`}>
                         <Header />
-                        <Profile/>
-                        <UserPosts/>
+                        <Profile />
+                        <UserPosts />
                     </Route>
                     <Route path={`/posts/${postId}`}>
                         <Header />
-                        <SinglePost/>
+                        <SinglePost />
                     </Route>
                     <Route path="/posts">
                         <Header />
@@ -44,6 +44,6 @@ const App = () => {
     )
 }
 
-export default App
+export default App;
 
 //"proxy": "https://share-memory-app.herokuapp.com",
