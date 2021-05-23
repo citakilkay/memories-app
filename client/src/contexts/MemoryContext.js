@@ -9,6 +9,7 @@ export const MemoryContext = createContext();
 
 const MemoryContextProvider = (props) => {
     const [posts, setPosts] = useState(["posts"]);
+    const [users, setUsers] = useState([]);
     const [title, setTitle] = useState(true);
     const [postId, setPostId] = useState(); // PostId for selected 'read more' Post
     const [postById, setPostById] = useState(); // Data For Single Post
@@ -24,14 +25,16 @@ const MemoryContextProvider = (props) => {
         }
         fetchPostsAPI();
     }, [title]);
-    /*  useEffect(
+
+    // Get All users Info
+      useEffect(
         () => {
           async function fetchUsersAPI() {
           const result = await axios(urlUsers);
           setUsers(result.data);
         }
         fetchUsersAPI();
-      }, [title]);*/
+      }, [title]);
 
     //Post Of Selected 'read more'
     useEffect(() => {
@@ -85,7 +88,7 @@ const MemoryContextProvider = (props) => {
     }, [userProfile]);
 
     return (
-        <MemoryContext.Provider value={{ posts, userProfile, setPostId, postById, postId, setUserName, userName, userPosts }}>
+        <MemoryContext.Provider value={{ posts, userProfile, setPostId, postById, postId, setUserName, userName, userPosts, users }}>
             {props.children}
         </MemoryContext.Provider>
     )

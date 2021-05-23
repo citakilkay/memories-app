@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
-import { MemoryContext } from '../contexts/MemoryContext';
+import { MemoryContext } from '../../contexts/MemoryContext';
 import { useContext } from 'react';
 import moment from 'moment';
 

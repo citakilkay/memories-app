@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { MemoryContext } from '../contexts/MemoryContext';
+import { MemoryContext } from '../../contexts/MemoryContext';
 import { useHistory } from 'react-router-dom';
 import Post from './Post';
 import { Container, Row, Col } from 'react-bootstrap';

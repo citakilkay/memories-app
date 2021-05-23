@@ -11,8 +11,9 @@ export const getUsers = async (req, res) => {
 
 export const createUser = async (req, res) => {
     try {
-        const newUser = await new User(req.body);
-        newUser.save().then(newUser => res.json(newUser));
+        const newUser = new User(req.body);
+        await newUser.save();
+        res.json(newUser);
         
     } catch (err) {
         res.json({message: err.message});

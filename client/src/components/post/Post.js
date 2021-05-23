@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
-import { MemoryContext } from '../contexts/MemoryContext';
+import { MemoryContext } from '../../contexts/MemoryContext';
 import axios from 'axios';
 import moment from 'moment';
 const Post = (post) => {

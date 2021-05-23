@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&family=Roboto:wght@300;400;700&family=Yatra+One&display=swap");
+.auth {
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  border-radius: 2px;
+  background-color: #c6cccf85;
+}
+
+.panel-login {
+  border-color: #ccc;
+}
+
+.panel-login .google-auth:hover {
+  cursor: pointer;
+}
+
+.panel-login > .panel-heading {
+  color: #00415d;
+  border-color: #fff;
+  text-align: center;
+}
+
+.panel-login > .panel-heading a {
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.panel-login > .panel-heading a:hover {
+  cursor: pointer;
+}
+
+.panel-login > .panel-heading a.active {
+  color: #d35B4d;
+  font-size: 18px;
+}
+
+.panel-login input[type="text"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.panel-login input[type="email"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.panel-login input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+
+.panel-login input:hover {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+
+.panel-login input:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+
+.btn-login {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59B2E6;
+}
+
+.btn-login:hover {
+  color: #fff;
+  background-color: #53A3CD;
+  border-color: #53A3CD;
+}
+
+.btn-login:focus {
+  color: #fff;
+  background-color: #53A3CD;
+  border-color: #53A3CD;
+}
+
+.btn-register {
+  background-color: #d35B4d;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #2d3436;
+}
+
+.btn-register:hover {
+  color: #fff;
+  background-color: #d35B4d;
+  border-color: #2d3436;
+}
+
+.btn-register:focus {
+  color: #fff;
+  background-color: #d35B4d;
+  border-color: #2d3436;
+}
+/*# sourceMappingURL=auth-style.css.map */

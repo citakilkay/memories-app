@@ -12,7 +12,7 @@ export const getAllPosts = async (req, res) => {
     }
 }
 export const createPost = async (req, res) => {
-
+    
     const { title, body, tags } = req.body;
     const tagsArray = tags.split(" ");
     const creator = "generalkenobi";
@@ -21,7 +21,8 @@ export const createPost = async (req, res) => {
     try{  
         uploadFile(postImg);
         await post.save();
-        res.redirect("/posts");
+        res.json(post);
+        //res.redirect("/posts");
     } catch (err) {
         res.json({message: err.message});
     }
