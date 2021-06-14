@@ -11,12 +11,13 @@ const MemoryContextProvider = (props) => {
     const [posts, setPosts] = useState(["posts"]);
     const [users, setUsers] = useState([]);
     const [title, setTitle] = useState(true);
+    const [isLogged, setIsLogged] = useState();
     const [postId, setPostId] = useState(); // PostId for selected 'read more' Post
     const [postById, setPostById] = useState(); // Data For Single Post
     const [userName, setUserName] = useState(); // UserName for going to an user profile
     const [userProfile, setUserProfile] = useState(); // Data for showing a user profile
     const [userPosts, setUserPosts] = useState(); // Posts of selected user
-    
+
     const history = useHistory();
     useEffect(() => {
         async function fetchPostsAPI() {
@@ -24,17 +25,17 @@ const MemoryContextProvider = (props) => {
             setPosts(result.data);
         }
         fetchPostsAPI();
-    }, [title]);
+    }, [isLogged]);
 
     // Get All users Info
-      useEffect(
+    useEffect(
         () => {
-          async function fetchUsersAPI() {
-          const result = await axios(urlUsers);
-          setUsers(result.data);
-        }
-        fetchUsersAPI();
-      }, [title]);
+            async function fetchUsersAPI() {
+                const result = await axios(urlUsers);
+                setUsers(result.data);
+            }
+            fetchUsersAPI();
+        }, [isLogged]);
 
     //Post Of Selected 'read more'
     useEffect(() => {
@@ -76,9 +77,9 @@ const MemoryContextProvider = (props) => {
                 //console.log(postId)
                 const urlPostbyId = `http://localhost:5000/posts/${postId}`;
                 const result = await axios(urlPostbyId);
-                    //console.log(result.data);
-                    postArray.push(result.data);
-                    //console.log(result);
+                //console.log(result.data);
+                postArray.push(result.data);
+                //console.log(result);
             })).then(() => {
                 //console.log(postArray[0]);
                 setUserPosts(postArray);
@@ -88,7 +89,7 @@ const MemoryContextProvider = (props) => {
     }, [userProfile]);
 
     return (
-        <MemoryContext.Provider value={{ posts, userProfile, setPostId, postById, postId, setUserName, userName, userPosts, users }}>
+        <MemoryContext.Provider value={{ posts, userProfile, setPostId, postById, postId, setUserName, userName, userPosts, users, setIsLogged }}>
             {props.children}
         </MemoryContext.Provider>
     )

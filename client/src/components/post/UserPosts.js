@@ -21,12 +21,12 @@ const UserPosts = () => {
             <Row>
                 {userPosts.map((post, key) => {
                     console.log(post);
-                return (
-                    <Col key={key} xs={10} md={6} lg={4} className="offset-1 offset-md-0 py-5 px-3">
-                        <Post post={post} />
-                    </Col>
-                )
-            })}
+                    return (
+                        <Col key={key} xs={10} md={6} lg={4} className="offset-1 offset-md-0 py-5 px-3">
+                            <Post post={post} />
+                        </Col>
+                    )
+                })}
             </Row>
         </Container>
     )

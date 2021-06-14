@@ -6,12 +6,19 @@ import {useForm} from 'react-hook-form';
 const AddPost = () => {
     //const [imgName,setImgName] = useState("");
     const { register, handleSubmit } = useForm();
+    const [checkFileType, setCheckFileType] = useState(false);
     const onSubmit = async (dataForm, e) => {
         const formData = new FormData();
+        let i = 0;
         formData.append('title', dataForm.title);
         formData.append('body', dataForm.body);
         formData.append('tags', dataForm.tags);
         formData.append('postImg', dataForm.postImg[0]);
+        console.log();
+        if (dataForm.postImg[0].type != "image/jpeg") {
+            setCheckFileType(true);
+            return null;
+        }
         try {
             const config = {
                 headers: {
@@ -49,7 +56,9 @@ const AddPost = () => {
                                 <Form.Control {...register('tags')} placeholder="#sunrise etc." required></Form.Control>
                             </Col>
                             <Col xs={12} md={6} className="my-2 offset-md-3">
+                                <span className="text-danger px-1" style={{ display: checkFileType ? "inline-block" : "none" }}>File must be image/jpeg type!</span>
                                 <Form.File {...register('postImg')} id="image-upload" required type="file"/>
+                                
                             </Col>
                         </Row>
                     </Form.Group>

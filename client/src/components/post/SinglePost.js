@@ -10,10 +10,10 @@ const SinglePost = () => {
     let postTags = postById.tags || ["Loading Post Tags"];
     return (
         <>
-           <Container>
-               <Row>
-                   <Col md={10} className="offset-md-1">
-                       <Row>
+            <Container>
+                <Row>
+                    <Col md={10} className="offset-md-1">
+                        <Row>
                             <Card className="card-all my-5">
                                 <Col xs={12} className="my-3">
                                     <h3 className="text-center">{postById.title}</h3>
@@ -46,10 +46,10 @@ const SinglePost = () => {
                                     <div >No Comment yet.</div>
                                 </Col>
                             </Card>
-                       </Row>
-                   </Col>
-               </Row>
-           </Container>
+                        </Row>
+                    </Col>
+                </Row>
+            </Container>
         </>
     )
 }
