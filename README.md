@@ -7,7 +7,7 @@ This project is a social media app that share our memories.
  - Share your memories with everybody
  - Like and type a comment to the posts
 
-## LIVE: Coming Soon
+## LIVE: [memories-app](https://share-memories-app.netlify.app/)
 
 ## Installing and Running the App
  - git clone https://github.com/citakilkay/memories-app.git
